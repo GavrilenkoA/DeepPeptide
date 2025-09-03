@@ -71,7 +71,7 @@ def generate_esm_embeddings(fasta_file, esm_embeddings_dir, repr_layers=33):
             seq_embedding = res[:,0]
             #print(seq_embedding.size())
 
-            output_file = open(f'{esm_embeddings_dir}/{hash_aa_string(seq)}.pt', 'wb')
+            output_file = open(f'{esm_embeddings_dir}/{label}.pt', 'wb')
             torch.save(seq_embedding, output_file)
             output_file.close()
 
